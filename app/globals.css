@@ -1,26 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Brooklyn ── */
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-Normal.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brooklyn';
+  src: url('/fonts/Brooklyn/Brooklyn-HeavyItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── Prestigious ── */
+@font-face {
+  font-family: 'Prestigious';
+  src: url('/fonts/Prestigious/Prestigious.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Zen Maru Gothic ── */
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/Zen%20Maru%20Gothic/ZenMaruGothic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/Zen%20Maru%20Gothic/ZenMaruGothic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/Zen%20Maru%20Gothic/ZenMaruGothic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/Zen%20Maru%20Gothic/ZenMaruGothic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/Zen%20Maru%20Gothic/ZenMaruGothic-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-brooklyn: 'Brooklyn', sans-serif;
+  --font-prestigious: 'Prestigious', serif;
+  --font-zen: 'Zen Maru Gothic', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  --color-tomo-dark: #231F20;
+  --color-tomo-gold: #CFAD77;
+  --color-tomo-warm-gold: #C69C6D;
+  --color-tomo-dark-gold: #926426;
+  --color-tomo-brown: #674A2C;
+  --color-tomo-dark-brown: #593F2A;
+  --color-tomo-deep-brown: #41393B;
+  --color-tomo-cream: #F8F7F8;
+  --color-tomo-warm-cream: #F8F7EE;
+  --color-tomo-light-cream: #F0EEEE;
+  --color-tomo-pink: #FFB8CC;
+  --color-tomo-red: #C30029;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #231F20;
+  color: #F8F7F8;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  overflow-x: hidden;
 }
+
+/* ─── Navigation hover ─── */
+.nav-more-link:hover {
+  color: #CFAD77 !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Global button base ─── */
+.tomo-btn {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+}
+
+/* Gold #C69C6D — View Full Menu, Reserve a Table, Send Email */
+.tomo-btn-gold { background-color: #C69C6D; color: #231F20; border-color: #C69C6D; }
+.tomo-btn-gold:hover { background-color: transparent; color: #C69C6D; }
+
+/* Amber #CFAD77 — Order Online (header) */
+.tomo-btn-amber { background-color: #CFAD77; color: #231F20; border-color: #CFAD77; }
+.tomo-btn-amber:hover { background-color: transparent; color: #CFAD77; }
+
+/* Light cream #F0EEEE — Reserve A Table (hero), About Us */
+.tomo-btn-light { background-color: #F0EEEE; color: #231F20; border-color: #F0EEEE; }
+.tomo-btn-light:hover { background-color: transparent; color: #F0EEEE; }
+
+/* Outlined bronze #926426 — Book Your Reservation */
+.tomo-btn-outlined-bronze { background-color: transparent; color: #926426; border-color: #926426; }
+.tomo-btn-outlined-bronze:hover { background-color: #926426; color: #F8F7EE; }
+
+/* Michelin — white bg, red text */
+.tomo-btn-michelin { background-color: #F8F7F8; color: #C30029; border-color: #F8F7F8; }
+.tomo-btn-michelin:hover { background-color: transparent; color: #F8F7F8; border-color: #F8F7F8; }
