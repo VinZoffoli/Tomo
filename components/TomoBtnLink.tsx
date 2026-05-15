@@ -2,13 +2,15 @@
 
 import { useState } from 'react';
 
-type BtnVariant = 'gold' | 'light' | 'michelin' | 'outlined-bronze';
+type BtnVariant = 'gold' | 'light' | 'michelin' | 'outlined-bronze' | 'outlined-tuna' | 'solid-bronze';
 
 const VARIANTS: Record<BtnVariant, { bg: string; color: string; border: string; hoverBg: string; hoverColor: string }> = {
-  gold: { bg: '#C69C6D', color: '#231F20', border: '#C69C6D', hoverBg: 'transparent', hoverColor: '#C69C6D' },
-  light: { bg: '#F0EEEE', color: '#231F20', border: '#F0EEEE', hoverBg: 'transparent', hoverColor: '#F0EEEE' },
-  michelin: { bg: '#F8F7F8', color: '#C30029', border: '#F8F7F8', hoverBg: 'transparent', hoverColor: '#F8F7F8' },
-  'outlined-bronze': { bg: 'transparent', color: '#926426', border: '#926426', hoverBg: '#926426', hoverColor: '#F8F7EE' },
+  gold:             { bg: '#C69C6D',   color: '#231F20', border: '#C69C6D',   hoverBg: 'transparent', hoverColor: '#C69C6D'   },
+  light:            { bg: '#F0EEEE',   color: '#231F20', border: '#F0EEEE',   hoverBg: 'transparent', hoverColor: '#F0EEEE'   },
+  michelin:         { bg: '#F8F7F8',   color: '#C30029', border: '#F8F7F8',   hoverBg: 'transparent', hoverColor: '#F8F7F8'   },
+  'outlined-bronze':{ bg: 'transparent', color: '#926426', border: '#926426', hoverBg: '#926426',     hoverColor: '#F8F7EE'   },
+  'outlined-tuna':  { bg: 'transparent', color: '#987636', border: '#987636', hoverBg: '#987636',     hoverColor: '#FFFFFF'   },
+  'solid-bronze':   { bg: '#8c6633',   color: '#FFFFFF', border: '#8c6633',   hoverBg: 'transparent', hoverColor: '#8c6633'   },
 };
 
 export default function TomoBtnLink({
@@ -19,6 +21,7 @@ export default function TomoBtnLink({
   onClick,
   target,
   rel,
+  download,
 }: {
   href: string;
   variant: BtnVariant;
@@ -27,6 +30,7 @@ export default function TomoBtnLink({
   onClick?: () => void;
   target?: string;
   rel?: string;
+  download?: boolean | string;
 }) {
   const [hovered, setHovered] = useState(false);
   const v = VARIANTS[variant];
@@ -36,6 +40,7 @@ export default function TomoBtnLink({
       href={href}
       target={target}
       rel={rel}
+      download={download}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

@@ -225,3 +225,11 @@ body {
 .premenu-card:hover {
   transform: scale(1.04);
 }
+
+/* Tuna Tuesday outlined #987636 */
+.tomo-btn-outlined-tuna { background-color: transparent; color: #987636; border: 1px solid #987636; }
+.tomo-btn-outlined-tuna:hover { background-color: #987636; color: #FFFFFF; }
+
+/* Tuna Tuesday solid bronze #8c6633 */
+.tomo-btn-solid-bronze { background-color: #8c6633; color: #FFFFFF; border-color: #8c6633; }
+.tomo-btn-solid-bronze:hover { background-color: transparent; color: #8c6633; }
