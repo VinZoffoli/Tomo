@@ -226,6 +226,16 @@ body {
   transform: scale(1.04);
 }
 
+/* ─── Omakase dark form ─── */
+.form-dark input::placeholder,
+.form-dark textarea::placeholder {
+  color: rgba(248, 247, 248, 0.35);
+}
+.form-dark select option {
+  background-color: #2c2829;
+  color: #F8F7F8;
+}
+
 /* Tuna Tuesday outlined #987636 */
 .tomo-btn-outlined-tuna { background-color: transparent; color: #987636; border: 1px solid #987636; }
 .tomo-btn-outlined-tuna:hover { background-color: #987636; color: #FFFFFF; }
