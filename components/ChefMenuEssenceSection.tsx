@@ -128,7 +128,7 @@ export default function ChefMenuEssenceSection() {
           </p>
 
           {/* View Full Menu button */}
-          <TomoBtnLink href="/menu" variant="gold" extraStyle={{ fontSize: '18px', marginBottom: '72px' }}>
+          <TomoBtnLink href="/pre-menu" variant="gold" extraStyle={{ fontSize: '18px', marginBottom: '72px' }}>
             View Full Menu
           </TomoBtnLink>
 

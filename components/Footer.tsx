@@ -17,7 +17,7 @@ const NAV_COLUMNS = [
     title: 'Tomo Japanese',
     links: [
       { label: 'Reservations', href: '/reservations' },
-      { label: 'Menu', href: '/menu' },
+      { label: 'Menu', href: '/pre-menu' },
       { label: 'Careers', href: '/careers' },
       { label: 'Gallery', href: '/gallery' },
       { label: 'Contact Us', href: '/contact' },

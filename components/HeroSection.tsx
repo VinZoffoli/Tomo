@@ -60,11 +60,13 @@ export default function HeroSection() {
         }}
       >
         <img
-          src="/assets/logo_hero.webp"
+          src="/assets/logo_hero2.webp"
           alt="Tomo Japanese Restaurant"
-          style={{ maxWidth: '320px', width: '100%' }}
+          style={{ maxWidth: '320px', width: '100%', animation: 'heroFadeIn 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both' }}
         />
-        <TomoBtnLink href="/reservations" variant="light">Reserve A Table</TomoBtnLink>
+        <div style={{ animation: 'heroFadeIn 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s both' }}>
+          <TomoBtnLink href="/reservations" variant="light">Reserve A Table</TomoBtnLink>
+        </div>
       </div>
     </section>
   );

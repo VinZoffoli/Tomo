@@ -142,6 +142,33 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── Entry animations ─── */
+@keyframes slideFromRight {
+  from { transform: translateX(56px); }
+  to   { transform: translateX(0); }
+}
+@keyframes slideFromLeft {
+  from { transform: translateX(-56px); }
+  to   { transform: translateX(0); }
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tomo-cards-slide-left > * {
+  animation: slideFromRight 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.tomo-cards-slide-right > * {
+  animation: slideFromLeft 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.tomo-cards-slide-left > *:nth-child(1),
+.tomo-cards-slide-right > *:nth-child(1) { animation-delay: 0ms; }
+.tomo-cards-slide-left > *:nth-child(2),
+.tomo-cards-slide-right > *:nth-child(2) { animation-delay: 65ms; }
+.tomo-cards-slide-left > *:nth-child(3),
+.tomo-cards-slide-right > *:nth-child(3) { animation-delay: 130ms; }
+
 /* ─── Navigation hover ─── */
 .nav-more-link:hover {
   color: #CFAD77 !important;
@@ -180,3 +207,21 @@ body {
 /* Michelin — white bg, red text */
 .tomo-btn-michelin { background-color: #F8F7F8; color: #C30029; border-color: #F8F7F8; }
 .tomo-btn-michelin:hover { background-color: transparent; color: #F8F7F8; border-color: #F8F7F8; }
+
+/* ─── Order Online buttons ─── */
+.order-btn {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s ease;
+}
+.order-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Pre-menu cards ─── */
+.premenu-card {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.premenu-card:hover {
+  transform: scale(1.04);
+}

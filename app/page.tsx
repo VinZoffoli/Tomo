@@ -7,6 +7,7 @@ import TomokaseTunaHappeningsSection from '@/components/TomokaseTunaHappeningsSe
 import GiftSection from '@/components/GiftSection';
 import FindUsSection from '@/components/FindUsSection';
 import Footer from '@/components/Footer';
+import AnimateIn from '@/components/AnimateIn';
 
 export default function Home() {
   return (
@@ -14,14 +15,14 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <TomoEssenceSection />
-        <MichelinSection />
-        <ChefMenuEssenceSection />
-        <TomokaseTunaHappeningsSection />
-        <GiftSection />
-        <FindUsSection />
+        <AnimateIn from="left"><TomoEssenceSection /></AnimateIn>
+        <AnimateIn from="scale"><MichelinSection /></AnimateIn>
+        <AnimateIn from="right"><ChefMenuEssenceSection /></AnimateIn>
+        <AnimateIn from="up"><TomokaseTunaHappeningsSection /></AnimateIn>
+        <AnimateIn from="scale"><GiftSection /></AnimateIn>
+        <AnimateIn from="left"><FindUsSection /></AnimateIn>
       </main>
-      <Footer />
+      <AnimateIn from="up"><Footer /></AnimateIn>
     </>
   );
 }

@@ -70,14 +70,22 @@ const LimitedNote = () => (
 
 export default function TomokaseTunaHappeningsSection() {
   const [happeningStart, setHappeningStart] = useState(0);
+  const [slideDir, setSlideDir] = useState<'left' | 'right'>('left');
 
   const maxStart = HAPPENINGS.length - VISIBLE;
 
-  const prev = () => setHappeningStart((s) => Math.max(0, s - 1));
-  const next = () => setHappeningStart((s) => Math.min(maxStart, s + 1));
+  const prev = () => {
+    setSlideDir('right');
+    setHappeningStart((s) => Math.max(0, s - 1));
+  };
+  const next = () => {
+    setSlideDir('left');
+    setHappeningStart((s) => Math.min(maxStart, s + 1));
+  };
 
   useEffect(() => {
     const id = setInterval(() => {
+      setSlideDir('left');
       setHappeningStart((s) => (s >= maxStart ? 0 : s + 1));
     }, 4000);
     return () => clearInterval(id);
@@ -394,13 +402,14 @@ export default function TomokaseTunaHappeningsSection() {
 
           {/* Cards + navigation */}
           <div
+            key={happeningStart}
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '24px',
               marginBottom: '32px',
             }}
-            className="happenings-grid"
+            className={`happenings-grid tomo-cards-slide-${slideDir}`}
           >
             {visible.map((item) => (
               <div
